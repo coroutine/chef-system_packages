@@ -7,7 +7,7 @@ Attributes
 ==========
 This cookbook defines one attribute:
     
-    node[:system_packages] = []
+    node[:system_packages] = ""
 
 This attribute should be a string listing the packages that you want installed, 
 separated by a space. Set this in Role, with the following:
