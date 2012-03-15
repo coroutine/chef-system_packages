@@ -17,7 +17,7 @@
 # limitations under the License.
 #
 
-node[:system_packages].split().each do |pkg|
+node[:system_packages][:packages].split().each do |pkg|
   package pkg do
     action :install
   end

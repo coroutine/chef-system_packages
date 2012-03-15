@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: rails_apps 
+# Cookbook Name:: system_packages
 # Attributes:: default
 #
 # Copyright 2012, Coroutine LLC
@@ -18,4 +18,13 @@
 #
 
 # A string containing the packages that you want installed.
-default[:system_packages] = ""
+default[:system_packages][:packages] = ""
+
+# To install from a source tarball
+default[:system_packages][:package_name]      = "" 
+default[:system_packages][:command]           = "" 
+default[:system_packages][:checksum]          = "" 
+default[:system_packages][:url]               = "" 
+default[:system_packages][:configure_options] = ""
+default[:system_packages][:archive_type]      = ".tar.gz" 
+
