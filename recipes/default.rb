@@ -17,7 +17,10 @@
 # limitations under the License.
 #
 
-node[:system_packages][:packages].split().each do |pkg|
+packages = node[:system_packages][:packages]
+packages = packages.split() if packages.is_a? String
+
+packages.each do |pkg|
   package pkg do
     action :install
   end
