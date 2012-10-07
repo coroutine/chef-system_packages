@@ -20,7 +20,23 @@
 packages = node[:system_packages][:packages]
 packages = packages.split() if packages.is_a? String
 
-packages.each do |pkg|
+# Allow "install" as an alias for packages
+install_packages = node[:system_packages][:install]
+install_packages = install_packages.split() if install_packages.is_a? String
+
+install_packages += packages
+
+# Remove packages first
+remove_packages = node[:system_packages][:remove]
+remove_packages = remove_packages.split() if remove_packages.is_a? String
+
+remove_packages.each do |pkg|
+  package pkg do
+    action :remove
+  end
+end
+
+install_packages.each do |pkg|
   package pkg do
     action :install
   end

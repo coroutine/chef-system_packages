@@ -19,6 +19,8 @@
 
 # A string containing the packages that you want installed.
 default[:system_packages][:packages] = ""
+default[:system_packages][:install] = []
+default[:system_packages][:remove] = []
 
 # To install from a source tarball
 default[:system_packages][:package_name]      = "" 
