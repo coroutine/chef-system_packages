@@ -17,6 +17,10 @@
 # limitations under the License.
 #
 
+execute "apt-get update" do
+    command "apt-get update"
+end
+
 packages = node[:system_packages][:packages]
 packages = packages.split() if packages.is_a? String
 
